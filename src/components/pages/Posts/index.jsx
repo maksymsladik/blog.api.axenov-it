@@ -1,16 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchPostsAction, fetchAddPostAction } from "./redux/asyncAction";
 import List from "./components/List";
 import Button from "../../modules/Button";
 import style from "./style.module.css";
 import AddPostForm from "./components/AddPostForm";
-import Pagination from "./components/Pagination";
 
 function Posts(props) {
-  const { fetchPosts, fetchAddPost, pagination } = props;
+  const {
+    fetchPosts,
+    fetchAddPost,
+    pagination,
+    isFetchLoadPosts,
+    posts,
+  } = props;
 
   const [isShowAddForm, setIsShowAddForm] = useState(false);
+
+  const onVerticallPagination = () => {
+    const pageYOffset = window.pageYOffset;
+    const innerHeight = window.innerHeight;
+    const scrollHeight = document.documentElement.scrollHeight - 400;
+    const pageYOffsetInnerHeight = pageYOffset + innerHeight;
+    if (pageYOffsetInnerHeight > scrollHeight) {
+      fetchPosts(pagination.page + 1, pagination.limit);
+      window.onscroll = null;
+    }
+  };
+
+  useEffect(() => {
+    window.onscroll = onVerticallPagination;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [posts]);
+
+  useEffect(() => {
+    fetchPosts(pagination.page, pagination.limit);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toggleAddForm = () => setIsShowAddForm(!isShowAddForm);
 
@@ -24,11 +50,6 @@ function Posts(props) {
     <div className={style.home}>
       <div className={style.home__nav}>
         <h1 className={style.home__title}>Posts component</h1>
-        <Pagination
-          onChacge={fetchPosts}
-          page={pagination.page}
-          limit={pagination.limit}
-        />
         <Button
           type="btn"
           title="Add post"
@@ -36,7 +57,10 @@ function Posts(props) {
           onClick={toggleAddForm}
         />
       </div>
-      <List />
+      {isFetchLoadPosts && (
+        <div className={style.home__loading}>Loading...</div>
+      )}
+      <List posts={posts} />
       <AddPostForm
         isShow={isShowAddForm}
         onSubmit={submitAddPostForm}
@@ -56,6 +80,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     pagination: state.posts.pagination,
+    isFetchLoadPosts: state.posts.isFetchLoadPosts,
+    posts: state.posts.data,
   };
 };
 

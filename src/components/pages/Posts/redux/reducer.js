@@ -1,8 +1,9 @@
-import { SET_POSTS, CHANGE_PAGINATION } from "./actionsTypes";
+import { SET_POSTS, CHANGE_PAGINATION, FETCH_LOAD_POSTS } from "./actionsTypes";
 
 export const initialState = {
   data: [],
   isShowAddForm: false,
+  isFetchLoadPosts: false,
   pagination: {
     page: 1,
     limit: 12,
@@ -14,7 +15,7 @@ export default function (state = initialState, action) {
     case SET_POSTS: {
       return {
         ...state,
-        data: action.posts,
+        data: [...state.data, ...action.posts],
       };
     }
 
@@ -22,6 +23,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         pagination: { ...state.pagination, ...action.pagination },
+      };
+    }
+
+    case FETCH_LOAD_POSTS: {
+      return {
+        ...state,
+        isFetchLoadPosts: action.status,
       };
     }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Post from "../Post";
 import style from "./style.module.css";
@@ -35,10 +34,4 @@ List.propTypes = {
   ),
 };
 
-const mapStateToProps = (state) => {
-  return {
-    posts: state.posts.data,
-  };
-};
-
-export default connect(mapStateToProps)(List);
+export default List;

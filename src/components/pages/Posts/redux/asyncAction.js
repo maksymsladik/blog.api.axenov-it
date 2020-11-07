@@ -1,12 +1,19 @@
 import RequestApi from "../../../../lib/RequestApi";
-import { setPostsAction, changePaginationAction } from "./actionsTypes";
+import {
+  setPostsAction,
+  changePaginationAction,
+  changeFetchLoadPostsAction,
+} from "./actionsTypes";
 
 export const fetchPostsAction = (dispatch, page, limit) => {
+  dispatch(changeFetchLoadPostsAction(true));
+
   RequestApi.getPosts(page, limit).then((data) => {
     if (data.result) {
       dispatch(changePaginationAction({ page, limit }));
       dispatch(setPostsAction(data.posts));
     }
+    dispatch(changeFetchLoadPostsAction(false));
   });
 };
 
