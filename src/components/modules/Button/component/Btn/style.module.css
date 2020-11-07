@@ -1,0 +1,39 @@
+.btn__add,
+.btn__create,
+.btn__save,
+.btn__cancel,
+.btn__disable,
+.btn__delete {
+  border: none;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn__add,
+.btn__create,
+.btn__save {
+  background: blue;
+  color: white;
+}
+
+.btn__disable {
+  background: #9f9fb0;
+  cursor: not-allowed;
+}
+
+.btn__add:hover {
+  background: #0078ff;
+}
+
+.btn__cancel,
+.btn__delete {
+  background: red;
+  color: white;
+}
+
+.btn__cancel,
+.btn__create {
+  margin-right: 5px;
+}

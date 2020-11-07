@@ -1,0 +1,22 @@
+[
+  {
+    "name": "title",
+    "type": "text",
+    "placeholder": "Enter title",
+    "regex": "^[0-9a-zA-Z\\s]{5,50}$",
+    "className": "addPostForm__input",
+    "errorText": "Incorect title value",
+    "isValid": true,
+    "value": "Example title 1"
+  },
+  {
+    "name": "short_description",
+    "type": "description",
+    "placeholder": "Enter short description",
+    "regex": "^[0-9a-zA-Z\\s]{5,200}$",
+    "className": "addPostForm__textarea",
+    "errorText": "Incorect short description value",
+    "isValid": true,
+    "value": "Example short description 1"
+  }
+]

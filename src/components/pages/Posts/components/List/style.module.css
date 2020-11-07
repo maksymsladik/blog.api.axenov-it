@@ -1,0 +1,5 @@
+.home__list {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}

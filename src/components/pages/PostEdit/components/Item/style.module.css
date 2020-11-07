@@ -1,0 +1,22 @@
+.form__row {
+  margin-bottom: 15px;
+  padding: 5px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.form__field {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.form__checkbox {
+  width: 25px;
+  height: 25px;
+}
+
+.form__error {
+  font-size: 12px;
+  color: red;
+}

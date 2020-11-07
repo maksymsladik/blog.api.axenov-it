@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pagination__btnLeft,
+.pagination__btnRight {
+  background: #ccc;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  max-width: 40px;
+  text-align: center;
+}
+
+.pagination__page {
+  width: 60px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

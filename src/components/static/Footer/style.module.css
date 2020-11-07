@@ -1,0 +1,18 @@
+.footer {
+  background-image: url(./img/94.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1200px;
+  min-height: 150px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

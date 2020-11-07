@@ -1,0 +1,18 @@
+.addPostForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #808080a1;
+}
+
+.addPostForm__container {
+  max-width: 500px;
+  width: 100%;
+  padding: 15px;
+  background: white;
+}

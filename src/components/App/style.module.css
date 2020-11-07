@@ -1,0 +1,12 @@
+.main {
+  margin: 10px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.1), 5px 5px 5px rgba(0, 0, 0, 0.3),
+    -5px -5px 5px rgba(255, 255, 255, 0.1);
+}

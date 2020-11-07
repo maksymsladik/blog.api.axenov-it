@@ -1,0 +1,22 @@
+.postEdit__edit,
+.postEdit__checkbox {
+  margin-left: auto;
+}
+
+.postEdit__edit {
+  margin-right: 15px;
+}
+
+.postEdit__checkbox {
+  display: block;
+}
+
+.postEdit__form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postEdit__title {
+  padding: 5px;
+  margin: 10px 0;
+}

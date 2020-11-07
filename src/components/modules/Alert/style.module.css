@@ -1,0 +1,21 @@
+.alert {
+  width: 100%;
+  margin: 5px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.alert__success,
+.alert__error {
+  padding: 15px;
+}
+
+.alert__success {
+  background: green;
+}
+
+.alert__error {
+  background: red;
+}

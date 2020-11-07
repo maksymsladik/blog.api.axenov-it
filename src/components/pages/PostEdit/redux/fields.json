@@ -1,0 +1,42 @@
+[
+  {
+    "name": "title",
+    "type": "text",
+    "placeholder": "Enter title",
+    "regex": "^[0-9a-zA-Z\\s]{5,50}$",
+    "className": "form__field",
+    "errorText": "Incorect title value",
+    "isValid": true,
+    "value": ""
+  },
+  {
+    "name": "short_description",
+    "type": "description",
+    "placeholder": "Enter short description",
+    "regex": "^[0-9a-zA-Z\\s]{5,200}$",
+    "className": "form__field",
+    "errorText": "Incorect short description value",
+    "isValid": true,
+    "value": ""
+  },
+  {
+    "name": "full_description",
+    "type": "description",
+    "placeholder": "Enter short description",
+    "regex": "^[0-9a-zA-Z\\s]{5,200}$",
+    "className": "form__field",
+    "errorText": "Incorect short description value",
+    "isValid": true,
+    "value": ""
+  },
+  {
+    "name": "status",
+    "type": "checkbox",
+    "placeholder": "Enter short description",
+    "regex": "",
+    "className": "form__checkbox",
+    "errorText": "",
+    "isValid": true,
+    "value": ""
+  }
+]
